@@ -1,12 +1,28 @@
 package com.sanjaeJava.company.payroll_package;
 
-public class ComissionEmployee extends Employee{
+public class ComissionEmployee extends Employee implements Payable{
     private double grossSales;
     private double comissionRate;
-    public ComissionEmployee(String firstName, String lastName, String socialSecurityNumber){
+    public ComissionEmployee(String firstName, String lastName, String socialSecurityNumber, double gs, double cr){
         super(firstName, lastName, socialSecurityNumber);
-        this.comissionRate = 0.0;
-        this.grossSales = 0.0;
+        this.comissionRate = gs;
+        this.grossSales = cr;
+    }
+
+    @Override
+    public double getPaymentAmount(){
+
+        return this.grossSales * this.comissionRate;
+    }
+
+    @Override
+    public void display(){
+        System.out.println("First Name : "+ getFirstName());
+        System.out.println("Last Name : "+ getLastName());
+        System.out.println("Social Security # : "+ getSocialSecurityNumber());
+        System.out.println("Gross Sales : " + this.grossSales);
+        System.out.println("ComissionRate : " + this.comissionRate);
+        System.out.println("Salary : $" + this.getPaymentAmount());
     }
 
     public double getGrossSales() {

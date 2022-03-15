@@ -1,6 +1,6 @@
 package com.sanjaeJava.company.payroll_package;
 
-public class Employee {
+public class Employee implements Payable{
     private String firstName;
     private String lastName;
     private String socialSecurityNumber;
@@ -21,5 +21,17 @@ public class Employee {
 
     public String getSocialSecurityNumber() {
         return socialSecurityNumber;
+    }
+
+    @Override
+    public double getPaymentAmount() {
+        return 0;
+    }
+
+    @Override
+    public void display(){
+        System.out.println("First Name : "+ this.firstName);
+        System.out.println("Last Name : "+ this.lastName);
+        System.out.println("Social Security # : "+ this.socialSecurityNumber);
     }
 }
