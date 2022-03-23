@@ -1,13 +1,9 @@
 package com.sanjaeJava.company.payroll_package;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-	// write your code here
+    public static void main(String[] args){
 
         Employee [] com = {
                 new ComissionEmployee("san", "ball", "wieyu", 500, 5),
@@ -32,11 +28,6 @@ public class Main {
         nvice.display();
         System.out.println("===========================================================================================\n");
         nvice.payAdvice();
-
-        ComissionEmployee cEmp = new ComissionEmployee("san", "ball", "wieyu", 500, 5);
-        BasePlusComissionEmployee bEmp = new BasePlusComissionEmployee("Jason", "Ball", "jb1234",20,25, 2500);
-        SalariedEmployee sEmp = new SalariedEmployee("Keisha", "Flat Tumock", "KF2009", 4500);
-        HourlyRate hEmp = new HourlyRate("Yendi", "Phillips", "YP3647", 350, 40);
 
     }
 }
