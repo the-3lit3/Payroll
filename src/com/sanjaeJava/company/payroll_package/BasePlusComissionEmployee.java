@@ -4,8 +4,6 @@ import org.w3c.dom.Text;
 
 import java.io.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class BasePlusComissionEmployee extends ComissionEmployee implements Payable{
     private double baseSalary;
@@ -28,6 +26,11 @@ public class BasePlusComissionEmployee extends ComissionEmployee implements Paya
         System.out.println("Gross Sales : " + getGrossSales());
         System.out.println("ComissionRate : " + getComissionRate());
         System.out.println("Salary : $" + this.getPaymentAmount());
+    }
+
+    @Override
+    public void getInfo() {
+
     }
 
     public double getBaseSalary() {

@@ -32,6 +32,11 @@ public class SalariedEmployee extends Employee implements Payable{
     }
 
     @Override
+    public void getInfo() {
+
+    }
+
+    @Override
     public void payAdvice() {
         LocalDate now = LocalDate.now();
         try(BufferedWriter createPayStub = new BufferedWriter(new FileWriter("paystub.txt", true))){

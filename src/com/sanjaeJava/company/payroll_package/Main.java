@@ -1,5 +1,4 @@
 package com.sanjaeJava.company.payroll_package;
-import java.io.IOException;
 
 public class Main {
 

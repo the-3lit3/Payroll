@@ -30,6 +30,11 @@ public class ComissionEmployee extends Employee implements Payable{
         System.out.println("Salary : $" + this.getPaymentAmount());
     }
 
+    @Override
+    public void getInfo() {
+
+    }
+
     public double getGrossSales() {
         return grossSales;
     }
