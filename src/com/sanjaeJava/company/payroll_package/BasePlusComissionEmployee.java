@@ -1,7 +1,5 @@
 package com.sanjaeJava.company.payroll_package;
 
-import org.w3c.dom.Text;
-
 import java.io.*;
 import java.time.LocalDate;
 
@@ -27,11 +25,11 @@ public class BasePlusComissionEmployee extends ComissionEmployee implements Paya
         System.out.println("ComissionRate : " + getComissionRate());
         System.out.println("Salary : $" + this.getPaymentAmount());
     }
-
-    @Override
-    public void getInfo() {
-
-    }
+//
+//    @Override
+//    public void getInfo() {
+//
+//    }
 
     public double getBaseSalary() {
         return baseSalary;

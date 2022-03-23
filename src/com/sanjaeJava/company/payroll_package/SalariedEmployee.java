@@ -1,13 +1,9 @@
 package com.sanjaeJava.company.payroll_package;
 
-import org.w3c.dom.Text;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class SalariedEmployee extends Employee implements Payable{
     private double weeklySalary;
@@ -16,25 +12,23 @@ public class SalariedEmployee extends Employee implements Payable{
         this.weeklySalary = wks;
     }
 
-    public double getWeeklySalary(){
-
-        return weeklySalary ;
-    }
+//    public double getWeeklySalary(){
+//
+//        return weeklySalary ;
+//    }
 
     @Override
     public void display(){
         System.out.println("First Name : "+ getFirstName());
         System.out.println("Last Name : "+ getLastName());
         System.out.println("Social Security # : "+ getSocialSecurityNumber());
-        //System.out.println("Gross Sales : " + this.grossSales);
-        //System.out.println("ComissionRate : " + this.comissionRate);
         System.out.println("Salary : $" + this.weeklySalary);
     }
 
-    @Override
-    public void getInfo() {
-
-    }
+//    @Override
+//    public void getInfo() {
+//
+//    }
 
     @Override
     public void payAdvice() {

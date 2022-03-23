@@ -3,7 +3,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedWriter;
 import java.time.LocalDate;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Invoice implements Payable{
     protected String partNumber;
@@ -11,12 +11,12 @@ public class Invoice implements Payable{
     protected int quantity;
     protected double unitCost;
 
-//    public Invoice(String partNumber, String partDescription, int quantity, double unitCost) {
-//        this.partNumber = partNumber;
-//        this.partDescription = partDescription;
-//        this.quantity = quantity;
-//        this.unitCost = unitCost;
-//    }
+    public Invoice(String partNumber, String partDescription, int quantity, double unitCost) {
+        this.partNumber = partNumber;
+        this.partDescription = partDescription;
+        this.quantity = quantity;
+        this.unitCost = unitCost;
+    }
     public Invoice(){}
 
     @Override
@@ -29,18 +29,18 @@ public class Invoice implements Payable{
 
     }
 
-    @Override
-    public void getInfo() {
-        Scanner info = new Scanner(System.in);
-        System.out.println("Part Number : ");
-        this.partNumber = info.nextLine();
-        System.out.println("Part Description : ");
-        this.partDescription = info.nextLine();
-        System.out.println("Quantity # : " );
-        this.quantity = info.nextInt();
-        System.out.println("Unit Cost $ : ");
-        this.unitCost = info.nextDouble();
-    }
+//    @Override
+//    public void getInfo() {
+//        Scanner info = new Scanner(System.in);
+//        System.out.println("Part Number : ");
+//        this.partNumber = info.nextLine();
+//        System.out.println("Part Description : ");
+//        this.partDescription = info.nextLine();
+//        System.out.println("Quantity # : " );
+//        this.quantity = info.nextInt();
+//        System.out.println("Unit Cost $ : ");
+//        this.unitCost = info.nextDouble();
+//    }
 
     @Override
     public double getPaymentAmount(){

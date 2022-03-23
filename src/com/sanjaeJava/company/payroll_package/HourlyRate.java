@@ -1,14 +1,10 @@
 package com.sanjaeJava.company.payroll_package;
 
-import org.w3c.dom.Text;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.concurrent.RecursiveTask;
+
 
 public class HourlyRate extends Employee implements Payable{
     private double wage;
@@ -19,13 +15,13 @@ public class HourlyRate extends Employee implements Payable{
         this.hours = wg; this.wage = hr;
     }
 
-    public double getWage(){
-        return this.wage;
-    }
-
-    public double getHours(){
-        return this.hours;
-    }
+//    public double getWage(){
+//        return this.wage;
+//    }
+//
+//    public double getHours(){
+//        return this.hours;
+//    }
 
     @Override
     public double getPaymentAmount(){
@@ -42,10 +38,10 @@ public class HourlyRate extends Employee implements Payable{
         System.out.println("Salary : $" + this.getPaymentAmount());
     }
 
-    @Override
-    public void getInfo() {
-
-    }
+//    @Override
+//    public void getInfo() {
+//
+//    }
 
     @Override
     public void payAdvice() {

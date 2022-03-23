@@ -2,12 +2,11 @@ package com.sanjaeJava.company.payroll_package;
 
 import java.io.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class ComissionEmployee extends Employee implements Payable{
     private double grossSales;
     private double comissionRate;
+
     public ComissionEmployee(String firstName, String lastName, String socialSecurityNumber, double gs, double cr){
         super(firstName, lastName, socialSecurityNumber);
         this.comissionRate = gs;
@@ -30,26 +29,26 @@ public class ComissionEmployee extends Employee implements Payable{
         System.out.println("Salary : $" + this.getPaymentAmount());
     }
 
-    @Override
-    public void getInfo() {
+    //    public void setGrossSales(double grossSales) {
+//        this.grossSales = grossSales;
+//    }
+//
+//    public void setComissionRate(double comissionRate) {
+////        this.comissionRate = comissionRate;
+////    }
 
-    }
 
     public double getGrossSales() {
         return grossSales;
     }
 
-    public void setGrossSales(double grossSales) {
-        this.grossSales = grossSales;
-    }
+
 
     public double getComissionRate() {
         return comissionRate;
     }
 
-    public void setComissionRate(double comissionRate) {
-        this.comissionRate = comissionRate;
-    }
+
 
     @Override
     public void payAdvice(){
