@@ -1,5 +1,10 @@
 package com.sanjaeJava.company.payroll_package;
 
+import java.io.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class ComissionEmployee extends Employee implements Payable{
     private double grossSales;
     private double comissionRate;
@@ -40,4 +45,20 @@ public class ComissionEmployee extends Employee implements Payable{
     public void setComissionRate(double comissionRate) {
         this.comissionRate = comissionRate;
     }
+
+    @Override
+    public void payAdvice(){
+        LocalDate now = LocalDate.now();
+        try(BufferedWriter createPayStub = new BufferedWriter(new FileWriter("paystub.txt", true))){
+            createPayStub.write("\n\n===========================================================================================\n\r" +
+                    "Date : " + now + "\n\rEmployee Name : "+ this.getFirstName() + " "+ this.getLastName() +
+                    "\n\rSalary : $ " + (int) getPaymentAmount());
+            System.out.println("Paystub Created successfully\n\n\r");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+
+    }
+
 }

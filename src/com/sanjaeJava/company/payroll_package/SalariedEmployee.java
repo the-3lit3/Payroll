@@ -1,6 +1,15 @@
 package com.sanjaeJava.company.payroll_package;
 
-public class SalariedEmployee extends Employee{
+import org.w3c.dom.Text;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class SalariedEmployee extends Employee implements Payable{
     private double weeklySalary;
     public SalariedEmployee(String firstName, String lastName, String socialSecurityNumber, double wks){
         super(firstName, lastName, socialSecurityNumber);
@@ -21,4 +30,16 @@ public class SalariedEmployee extends Employee{
         //System.out.println("ComissionRate : " + this.comissionRate);
         System.out.println("Salary : $" + this.weeklySalary);
     }
+
+    @Override
+    public void payAdvice() {
+        LocalDate now = LocalDate.now();
+        try(BufferedWriter createPayStub = new BufferedWriter(new FileWriter("paystub.txt", true))){
+            createPayStub.write("\n\n===========================================================================================\n\r" +
+                    "Date : " + now + "\n\rEmployee Name : "+ this.getFirstName() + " "+ this.getLastName() +
+                    "\n\rSalary : $ " + this.weeklySalary);
+            System.out.println("Paystub Created successfully\n\n\r");
+        }catch(IOException e){
+            e.printStackTrace();
+        }    }
 }
