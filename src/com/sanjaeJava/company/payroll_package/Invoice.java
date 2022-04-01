@@ -70,7 +70,7 @@ public class Invoice implements Payable{
     }
 
     @Override
-    public void payAdvice(){
+    public String payAdvice(){
         Date date = new Date();
         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
         DecimalFormat invoiceBalanceFormat = new DecimalFormat("0.00");

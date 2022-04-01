@@ -4,6 +4,7 @@ import java.io.*;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class ComissionEmployee extends Employee implements Payable{
@@ -64,20 +65,51 @@ public class ComissionEmployee extends Employee implements Payable{
     }
 
     @Override
-    public void payAdvice(){
+    public String payAdvice() {
         Date date = new Date();
         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
         DecimalFormat SalaryFormatter = new DecimalFormat("0.00");
-        try(BufferedWriter createPayStub = new BufferedWriter(new FileWriter("paystub.txt", true))){
+        String PayAdviceString;
+        PayAdviceString = "\n\t\t\tS. Facey Fotos \n\t\t\tDate : " + dateFormatter.format(date) +
+                 "\n\\n===========================================================================================\n\r" +
+                "Employee Name : " + this.firstName + " " + this.lastName + "\n\r\t\t\tSocial Security # : " + this.socialSecurityNumber
+                + "\n\t\t\tSalary : $" + SalaryFormatter.format(getPaymentAmount()) + " ";
+
+        /*try(BufferedWriter createPayStub = new BufferedWriter(new FileWriter("paystub.txt", true))){
             createPayStub.write("\n\n===========================================================================================\n\r" +
                     "Date : " + dateFormatter.format(date) + "\n\rEmployee Name : "+ this.getFirstName() + " "+ this.getLastName() +
                     "\n\rSalary : $ " + SalaryFormatter.format(getPaymentAmount()));
             System.out.println("Paystub Created successfully\n\n\r");
         }catch(IOException e){
             e.printStackTrace();
-        }
+        }*/
 
-
+        return PayAdviceString;
     }
 
+        public void createPaystub(String filePath, List<Employee> employeeList){
+
+            Date date = new Date();
+            SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
+            DecimalFormat SalaryFormatter = new DecimalFormat("0.00");
+
+            /*try(BufferedWriter createPayStub = new BufferedWriter(new FileWriter("Pay_Stub.txt", true))){
+                createPayStub.write("\n\n===========================================================================================\n\r" +
+                        "Date : " + dateFormatter.format(date) + "\n\rEmployee Name : "+ this.getFirstName() + " "+ this.getLastName() +
+                        "\n\rSalary : $ " + SalaryFormatter.format(getPaymentAmount()));
+                System.out.println("Paystub Created successfully\n\n\r");
+            }catch(IOException e){
+                e.printStackTrace();
+            }*/
+
+            try(BufferedWriter createStub = new BufferedWriter(new FileWriter(filePath, true))) {
+                for (Employee employee : employeeList) {
+                    createStub.write(employee.payAdvice());
+                }
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+    }
 }
+
+

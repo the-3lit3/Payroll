@@ -2,7 +2,7 @@ package com.sanjaeJava.company.payroll_package;
 
 import java.util.Scanner;
 
-public class Employee{
+public class Employee implements Payable{
     protected String firstName;
     protected String lastName;
     protected String socialSecurityNumber;
@@ -26,17 +26,18 @@ public class Employee{
         return socialSecurityNumber;
     }
 
-//    @Override
-//    public double getPaymentAmount() {
-//        return 0;
-//    }
-//
-//    @Override
-//    public void payAdvice(){
-//
-//    }
-//
-//    @Override
+    @Override
+    public double getPaymentAmount() {
+        return 0;
+    }
+
+    @Override
+    public String payAdvice(){
+
+        return null;
+    }
+
+    @Override
     public void display(){
         System.out.println("First Name : "+ this.firstName);
         System.out.println("Last Name : "+ this.lastName);
@@ -53,6 +54,12 @@ public class Employee{
         System.out.print("SSN : ");
         this.socialSecurityNumber = info.nextLine();
 
+    }
+
+    public String employeeInfo(){
+        String empStr = "First Name : " + this.firstName + "\n\rLast Name : " + lastName
+                + "\n\rSocial Security # : " + this.socialSecurityNumber;
+        return empStr;
     }
 
 }

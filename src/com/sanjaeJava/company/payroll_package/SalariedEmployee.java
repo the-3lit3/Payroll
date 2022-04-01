@@ -61,13 +61,16 @@ public class SalariedEmployee extends Employee implements Payable{
     }
 
     @Override
-    public void payAdvice() {
-        try(BufferedWriter createPayStub = new BufferedWriter(new FileWriter("paystub.txt", true))){
+    public String payAdvice() {
+        try (BufferedWriter createPayStub = new BufferedWriter(new FileWriter("paystub.txt", true))) {
             createPayStub.write("\n\n===========================================================================================\n\r" +
-                    "Date : " + dateFormatter.format(date) + "\n\rEmployee Name : "+ this.getFirstName() + " "+ this.getLastName() +
+                    "Date : " + dateFormatter.format(date) + "\n\rEmployee Name : " + this.getFirstName() + " " + this.getLastName() +
                     "\n\rSalary : $ " + salaryFormatter.format(weeklySalary));
             System.out.println("Paystub Created successfully\n\n\r");
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-        }    }
+        }
+        return null;
+    }
 }
+

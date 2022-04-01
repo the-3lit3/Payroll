@@ -1,9 +1,19 @@
 package com.sanjaeJava.company.payroll_package;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args){
-
+        String fileName = "Pay_Stub.txt";
+        Employee newEmp = new Employee();
+        for(int i = 0; i <3; i++) {
+            newEmp.getInfo();
+            String x = newEmp.employeeInfo();
+            List<String> employees = new ArrayList<>();
+            employees.add(x);
+        }
 //        Employee [] com = {
 //                new ComissionEmployee("san", "ball", "wieyu", 500, 5),
 //                new BasePlusComissionEmployee("Jason", "Ball", "jb1234",20,25, 2500),

@@ -74,7 +74,7 @@ public class HourlyRate extends Employee implements Payable{
     }
 
     @Override
-    public void payAdvice() {
+    public String payAdvice() {
         try(BufferedWriter createPayStub = new BufferedWriter(new FileWriter("paystub.txt", true))){
             createPayStub.write("\n\n===========================================================================================\n\r" +
                     "Date : " + dateFormatter.format(date) + "\n\rEmployee Name : "+ this.getFirstName() + " "+ this.getLastName() +

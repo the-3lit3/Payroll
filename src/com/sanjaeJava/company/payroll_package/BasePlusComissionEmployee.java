@@ -46,7 +46,7 @@ public class BasePlusComissionEmployee extends ComissionEmployee implements Paya
     }
 
     @Override
-    public void payAdvice(){
+    public String payAdvice(){
         try(BufferedWriter createPayStub = new BufferedWriter(new FileWriter("paystub.txt", true))){
             createPayStub.write("\n\n===========================================================================================\n\r" +
                     "Date : " + newDate + "\n\rEmployee Name : "+ this.getFirstName() + " "+ this.getLastName() +
