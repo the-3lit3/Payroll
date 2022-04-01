@@ -1,8 +1,8 @@
 package com.sanjaeJava.company.payroll_package;
 
-//import java.util.Scanner;
+import java.util.Scanner;
 
-public class Employee implements Payable{
+public class Employee{
     protected String firstName;
     protected String lastName;
     protected String socialSecurityNumber;
@@ -26,33 +26,33 @@ public class Employee implements Payable{
         return socialSecurityNumber;
     }
 
-    @Override
-    public double getPaymentAmount() {
-        return 0;
-    }
-
-    @Override
-    public void payAdvice(){
-
-    }
-
-    @Override
+//    @Override
+//    public double getPaymentAmount() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public void payAdvice(){
+//
+//    }
+//
+//    @Override
     public void display(){
         System.out.println("First Name : "+ this.firstName);
         System.out.println("Last Name : "+ this.lastName);
         System.out.println("Social Security # : "+ this.socialSecurityNumber);
     }
 
-//    @Override
-//    public void getInfo() {
-//        Scanner info = new Scanner(System.in);
-//        System.out.print("First Name : ");
-//        this.firstName = info.nextLine();
-//        System.out.print("Last Name : ");
-//        this.lastName = info.nextLine();
-//        System.out.print("SSN : ");
-//        this.socialSecurityNumber = info.nextLine();
-//
-//    }
+    //@Override
+    public void getInfo() {
+        Scanner info = new Scanner(System.in);
+        System.out.print("First Name : ");
+        this.firstName = info.nextLine();
+        System.out.print("Last Name : ");
+        this.lastName = info.nextLine();
+        System.out.print("SSN : ");
+        this.socialSecurityNumber = info.nextLine();
+
+    }
 
 }

@@ -4,5 +4,6 @@ public interface Payable {
     double getPaymentAmount();
     void payAdvice();
     void display();//Added for ease of displaying when testing data
-//    void getInfo();
+    void getInfo();
+
 }

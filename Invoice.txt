@@ -1,9 +1,25 @@
 
 
 ===========================================================================================
-Date : 2022-03-23
-Part Number : Toy-364
-Part Description : Toyota Altis Front Strut - Right
+Date : 30/52/2022			Invoice # : 1
+Part Number : Isis-01929
+Part Description : Toyota Mirror - right
 Quantity # : 2
-Unit Cost $ : 13000.0
-Invoice Balance : $ 26000
+Unit Cost $ : 2000.0
+Invoice Balance : $ 4000.00
+
+===========================================================================================
+Date : 30/56/2022			Invoice # : 1
+Part Number : aksh8383
+Part Description : alksjhgasjyhdas
+Quantity # : 2
+Unit Cost $ : 2500.0
+Invoice Balance : $ 5000.00
+
+===========================================================================================
+Date : 2022-03-30			Invoice # : 1
+Part Number : akashd332342\
+Part Description : aksdhjasjmh
+Quantity # : 3
+Unit Cost $ : 2000.00
+Invoice Balance : $ 6000.00
