@@ -1,6 +1,6 @@
 package com.sanjaeJava.company.payroll_package;
 
-//import java.util.Scanner;
+import java.util.Scanner;
 
 public class Employee implements Payable{
     protected String firstName;
@@ -32,8 +32,9 @@ public class Employee implements Payable{
     }
 
     @Override
-    public void payAdvice(){
+    public String payAdvice(){
 
+        return null;
     }
 
     @Override
@@ -43,16 +44,22 @@ public class Employee implements Payable{
         System.out.println("Social Security # : "+ this.socialSecurityNumber);
     }
 
-//    @Override
-//    public void getInfo() {
-//        Scanner info = new Scanner(System.in);
-//        System.out.print("First Name : ");
-//        this.firstName = info.nextLine();
-//        System.out.print("Last Name : ");
-//        this.lastName = info.nextLine();
-//        System.out.print("SSN : ");
-//        this.socialSecurityNumber = info.nextLine();
-//
-//    }
+    //@Override
+    public void getInfo() {
+        Scanner info = new Scanner(System.in);
+        System.out.print("First Name : ");
+        this.firstName = info.nextLine();
+        System.out.print("Last Name : ");
+        this.lastName = info.nextLine();
+        System.out.print("SSN : ");
+        this.socialSecurityNumber = info.nextLine();
+
+    }
+
+    public String employeeInfo(){
+        String empStr = "First Name : " + this.firstName + "\n\rLast Name : " + lastName
+                + "\n\rSocial Security # : " + this.socialSecurityNumber;
+        return empStr;
+    }
 
 }
